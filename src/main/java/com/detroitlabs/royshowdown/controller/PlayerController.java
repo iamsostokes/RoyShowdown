@@ -1,16 +1,24 @@
 package com.detroitlabs.royshowdown.controller;
 
+import com.detroitlabs.royshowdown.model.CartoonCharacter;
+import com.detroitlabs.royshowdown.service.RickAndMortyService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 @Controller
 public class PlayerController {
 
-    @ResponseBody
+    @Autowired
+    private RickAndMortyService rickAndMortyService;
+
     @RequestMapping("/")
-    public String displayHomePage() {
-        return "Hello World";
+    public String displayHomePage(ModelMap modelMap) {
+        CartoonCharacter character = rickAndMortyService.fetchSingleCharacter();;
+        modelMap.put("character", character);
+        return "index";
     }
 
 }
