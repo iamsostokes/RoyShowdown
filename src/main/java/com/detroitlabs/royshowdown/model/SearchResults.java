@@ -7,6 +7,7 @@ import java.util.ArrayList;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class SearchResults {
+
     private ArrayList<Job> SearchResultItems = new ArrayList<Job>();
 
     @JsonProperty("SearchResultItems")

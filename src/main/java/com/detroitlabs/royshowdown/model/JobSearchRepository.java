@@ -5,6 +5,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class JobSearchRepository {
+    private String LanguageCode;
     private SearchResults SearchResult;
 
     @JsonProperty("SearchResult")
@@ -15,5 +16,15 @@ public class JobSearchRepository {
     @JsonProperty("SearchResult")
     public void setSearchResult(SearchResults searchResult) {
         SearchResult = searchResult;
+    }
+
+    @JsonProperty("LanguageCode")
+    public String getLanguageCode() {
+        return LanguageCode;
+    }
+
+    @JsonProperty("LanguageCode")
+    public void setLanguageCode(String languageCode) {
+        LanguageCode = languageCode;
     }
 }
