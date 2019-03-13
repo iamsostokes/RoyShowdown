@@ -16,8 +16,11 @@ public class PlayerController {
 
     @RequestMapping("/")
     public String displayHomePage(ModelMap modelMap) {
-        CartoonCharacter character = rickAndMortyService.fetchSingleCharacter();;
+        CartoonCharacter character = rickAndMortyService.fetchSingleCharacter(1);
+        CartoonCharacter character2 = rickAndMortyService.fetchSingleCharacter(39);
+
         modelMap.put("character", character);
+        modelMap.put("character2", character2);
         return "index";
     }
 
