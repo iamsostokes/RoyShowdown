@@ -1,0 +1,19 @@
+html {
+    background-color: black;
+}
+
+body {
+    background-color: black;
+}
+
+.card {
+    margin-top: 20px;
+}
+
+.getJobButton {
+    margin-top: 10px;
+}
+
+.showdownButton {
+    margin-top: 10px;
+}
