@@ -39,22 +39,31 @@ public class PlayerController {
 
     @RequestMapping("/jobsearch")
     public String displayJobPage(ModelMap modelMap) {
-        CartoonCharacter character = rickAndMortyService.fetchSingleCharacter();;
-        modelMap.put("character", character);
+
+        modelMap.put("playerOneImage", getCurrentPlayerOne().getCartoonCharacter().getImage());
+        modelMap.put("playerTwoImage", getCurrentPlayerTwo().getCartoonCharacter().getImage());
+
         return "jobPage";
     }
 
     @RequestMapping("/readytorumble")
     public String displayPlayerProfiles(ModelMap modelMap) {
-        CartoonCharacter character = rickAndMortyService.fetchSingleCharacter();;
-        modelMap.put("character", character);
+
+        modelMap.put("playerOneImage", getCurrentPlayerOne().getCartoonCharacter().getImage());
+        modelMap.put("playerTwoImage", getCurrentPlayerTwo().getCartoonCharacter().getImage());
+
         return "preShowdown";
     }
 
     @RequestMapping("/winnercircle")
     public String displayWinnerPage(ModelMap modelMap) {
-        CartoonCharacter character = rickAndMortyService.fetchSingleCharacter();;
-        modelMap.put("character", character);
+
+        modelMap.put("playerOneImage", getCurrentPlayerOne().getCartoonCharacter().getImage());
+        modelMap.put("playerOneName", getCurrentPlayerOne().getCartoonCharacter().getName());
+
+        modelMap.put("playerTwoImage", getCurrentPlayerTwo().getCartoonCharacter().getImage());
+        modelMap.put("playerTwoName", getCurrentPlayerTwo().getCartoonCharacter().getName());
+
         return "winnerPage";
     }
 

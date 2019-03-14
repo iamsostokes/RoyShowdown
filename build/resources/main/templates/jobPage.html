@@ -21,9 +21,9 @@
 
         <div class="card d-inline-flex col-sm-4">
             <div>
-                <img class="card-img-top" th:src="${character.image}"/>
+                <img class="card-img-top" th:src="${playerOneImage}"/>
                 <ul class="list-group list-group-flush">
-                    <li class="list-group-item" th:text="'Name: ' + ${character.name}">Name</li>
+                    <li class="list-group-item" th:text="'Name: ' + ${playerOneName}">Name</li>
                     <li class="list-group-item" th:text="'Job: '">Job</li>
                 </ul>
             </div>
@@ -31,9 +31,9 @@
 
         <div class="card d-inline-flex col-sm-4">
             <div>
-                <img class="card-img-top" th:src="${character.image}"/>
+                <img class="card-img-top" th:src="${playerTwoImage}"/>
                 <ul class="list-group list-group-flush">
-                    <li class="list-group-item" th:text="'Name: ' + ${character.name}">Name</li>
+                    <li class="list-group-item" th:text="'Name: ' + ${playerTwoName}">Name</li>
                     <li class="list-group-item" th:text="'Job: '">Job</li>
                 </ul>
             </div>
