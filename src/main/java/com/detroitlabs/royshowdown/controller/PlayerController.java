@@ -3,6 +3,7 @@ package com.detroitlabs.royshowdown.controller;
 import com.detroitlabs.royshowdown.model.*;
 import com.detroitlabs.royshowdown.service.JobService;
 import com.detroitlabs.royshowdown.service.RickAndMortyService;
+import com.sun.org.apache.xpath.internal.operations.Mod;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
@@ -47,6 +48,12 @@ public class PlayerController {
 
     @RequestMapping("/readytorumble")
     public String displayPlayerProfiles(ModelMap modelMap) {
+        JobSearchRepository searchRepo = jobService.fetchAllJobs();
+        Job playerJob1 = searchRepo.getSearchResult().getSearchResultItems().get(0);
+        Job playerJob2 = searchRepo.getSearchResult().getSearchResultItems().get(10);
+
+        getCurrentPlayerOne().setJob(playerJob1);
+        getCurrentPlayerTwo().setJob(playerJob2);
 
         setAllPlayersImageOnModelMap(modelMap);
         setAllPlayersNamesOnModelMap(modelMap);
@@ -62,6 +69,9 @@ public class PlayerController {
         setAllPlayersImageOnModelMap(modelMap);
         setAllPlayersNamesOnModelMap(modelMap);
         setAllPlayersJobNamesOnModelmap(modelMap);
+
+        setAllPlayerSalariesOnModelMap(modelMap);
+
 
         return "winnerPage";
     }
@@ -98,8 +108,32 @@ public class PlayerController {
     }
 
     private void setAllPlayersJobNamesOnModelmap(ModelMap modelmap){
-        modelmap.put("playerOneJobName", getCurrentPlayerOne().getJob().getPositionTitle());
-        modelmap.put("playerTwoJobName", getCurrentPlayerTwo().getJob().getPositionTitle());
+
+        modelmap.put("playerOneJobName", getCurrentPlayerOne().getJob().getMatchedObjectDescriptor().getPositionTitle());
+        modelmap.put("playerTwoJobName", getCurrentPlayerTwo().getJob().getMatchedObjectDescriptor().getPositionTitle());
+    }
+
+    private void setAllPlayerSalariesOnModelMap(ModelMap modelMap){
+        modelMap.put("playerOneSalary", getCurrentPlayerOne().getJob().getMatchedObjectDescriptor().getPositionRemuneration().get(0).getMaximumRange());
+        modelMap.put("playerTwoSalary", getCurrentPlayerTwo().getJob().getMatchedObjectDescriptor().getPositionRemuneration().get(0).getMaximumRange());
+    }
+
+    public String getPlayerOneMaximumSalary() {
+        SalaryRange playerOneSalaryRange = getCurrentPlayerOne().getJob().getMatchedObjectDescriptor().getPositionRemuneration().get(0);
+        return playerOneSalaryRange.getMaximumRange();
+    }
+    public String getPlayerTwoMaximumSalary() {
+        SalaryRange playerTwoSalaryRange = getCurrentPlayerTwo().getJob().getMatchedObjectDescriptor().getPositionRemuneration().get(0);
+        return playerTwoSalaryRange.getMaximumRange();
+    }
+
+    public String getPlayerOneJobTitle() {
+         return getCurrentPlayerOne().getJob().getMatchedObjectDescriptor().getPositionTitle();
+
+    }
+    public String getPlayerTwoJobTitle() {
+        return getCurrentPlayerTwo().getJob().getMatchedObjectDescriptor().getPositionTitle();
+
     }
 
 }
