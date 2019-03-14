@@ -35,4 +35,11 @@ public class PlayerController {
         return "preShowdown";
     }
 
+    @RequestMapping("/winnercircle")
+    public String displayWinnerPage(ModelMap modelMap) {
+        CartoonCharacter character = rickAndMortyService.fetchSingleCharacter();;
+        modelMap.put("character", character);
+        return "winnerPage";
+    }
+
 }
