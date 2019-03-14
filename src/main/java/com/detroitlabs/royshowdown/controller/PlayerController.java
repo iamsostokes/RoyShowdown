@@ -55,6 +55,15 @@ public class PlayerController {
         getCurrentPlayerOne().setJob(playerJob1);
         getCurrentPlayerTwo().setJob(playerJob2);
 
+        JobSearchRepository jobSearchRepository = jobService.fetchAllJobs();
+//        jobSearchRepository.getSearchResult().fetchSingleJob();
+
+        Job jobForPlayer1 = jobSearchRepository.getSearchResult().fetchSingleJob();
+        Job jobForPlayer2 = jobSearchRepository.getSearchResult().fetchSingleJob();
+
+        getCurrentPlayerOne().setJob(jobForPlayer1);
+        getCurrentPlayerTwo().setJob(jobForPlayer2);
+
         setAllPlayersImageOnModelMap(modelMap);
         setAllPlayersNamesOnModelMap(modelMap);
         setAllPlayersJobNamesOnModelmap(modelMap);
