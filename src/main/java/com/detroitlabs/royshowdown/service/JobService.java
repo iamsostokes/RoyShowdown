@@ -1,9 +1,12 @@
 package com.detroitlabs.royshowdown.service;
 
+import com.detroitlabs.royshowdown.model.Job;
 import com.detroitlabs.royshowdown.model.JobSearchRepository;
 import org.springframework.http.HttpHeaders;
 import org.springframework.stereotype.Component;
 import org.springframework.web.client.RestTemplate;
+
+import java.util.Random;
 
 @Component
 public class JobService {

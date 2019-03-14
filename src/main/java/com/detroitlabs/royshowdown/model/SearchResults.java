@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.ArrayList;
+import java.util.Random;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class SearchResults {
@@ -31,4 +32,13 @@ public class SearchResults {
         SearchResultCount = searchResultCount;
     }
 
+
+    private int generateRandomNumberForJob(){
+        Random random = new Random();
+        return random.nextInt(getSearchResultItems().size() - 1);
+    }
+
+    public Job fetchSingleJob () {
+        return getSearchResultItems().get(generateRandomNumberForJob());
+    }
 }

@@ -33,4 +33,6 @@ public class CartoonCharacter {
     public String getJob() {
         return job;
     }
+
+
 }

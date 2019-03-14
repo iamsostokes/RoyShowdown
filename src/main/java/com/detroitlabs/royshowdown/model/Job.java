@@ -27,4 +27,5 @@ public class Job {
     public String getPositionTitle() {
         return PositionTitle;
     }
+
 }

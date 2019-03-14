@@ -48,6 +48,15 @@ public class PlayerController {
     @RequestMapping("/readytorumble")
     public String displayPlayerProfiles(ModelMap modelMap) {
 
+        JobSearchRepository jobSearchRepository = jobService.fetchAllJobs();
+//        jobSearchRepository.getSearchResult().fetchSingleJob();
+
+        Job jobForPlayer1 = jobSearchRepository.getSearchResult().fetchSingleJob();
+        Job jobForPlayer2 = jobSearchRepository.getSearchResult().fetchSingleJob();
+
+        getCurrentPlayerOne().setJob(jobForPlayer1);
+        getCurrentPlayerTwo().setJob(jobForPlayer2);
+
         setAllPlayersImageOnModelMap(modelMap);
         setAllPlayersNamesOnModelMap(modelMap);
         setAllPlayersJobNamesOnModelmap(modelMap);
@@ -98,8 +107,8 @@ public class PlayerController {
     }
 
     private void setAllPlayersJobNamesOnModelmap(ModelMap modelmap){
-        modelmap.put("playerOneJobName", getCurrentPlayerOne().getJob().getPositionTitle());
-        modelmap.put("playerTwoJobName", getCurrentPlayerTwo().getJob().getPositionTitle());
+        modelmap.put("playerOneJobName", getCurrentPlayerOne().getJob().getMatchedObjectDescriptor().getPositionTitle());
+        modelmap.put("playerTwoJobName", getCurrentPlayerTwo().getJob().getMatchedObjectDescriptor().getPositionTitle());
     }
 
 }
