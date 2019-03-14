@@ -55,6 +55,7 @@ public class PlayerController {
         JobSearchRepository searchRepo = jobService.fetchAllJobs();
         ArrayList<Job> positionTitle = searchRepo.getSearchResult().getSearchResultItems();
 
+        modelMap.put("maximumRange", searchRepo.getSearchResult().getSearchResultItems().get(0).getMatchedObjectDescriptor().getPositionRemuneration().get(0).getMaximumRange());
         modelMap.put("positionTitle", searchRepo.getSearchResult().getSearchResultItems().get(0).getMatchedObjectDescriptor().getPositionTitle());
         modelMap.put("searchResultCount", searchRepo.getSearchResult().getSearchResultCount());
         modelMap.put("jobResults", positionTitle);
