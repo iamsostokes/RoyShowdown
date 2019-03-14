@@ -29,6 +29,27 @@ public class PlayerController {
         return "index";
     }
 
+    @RequestMapping("/jobsearch")
+    public String displayJobPage(ModelMap modelMap) {
+        CartoonCharacter character = rickAndMortyService.fetchSingleCharacter();;
+        modelMap.put("character", character);
+        return "jobPage";
+    }
+
+    @RequestMapping("/readytorumble")
+    public String displayPlayerProfiles(ModelMap modelMap) {
+        CartoonCharacter character = rickAndMortyService.fetchSingleCharacter();;
+        modelMap.put("character", character);
+        return "preShowdown";
+    }
+
+    @RequestMapping("/winnercircle")
+    public String displayWinnerPage(ModelMap modelMap) {
+        CartoonCharacter character = rickAndMortyService.fetchSingleCharacter();;
+        modelMap.put("character", character);
+        return "winnerPage";
+    }
+
     @RequestMapping("/test")
     public String displayJob(ModelMap modelMap) {
         JobSearchRepository searchRepo = jobService.fetchAllJobs();

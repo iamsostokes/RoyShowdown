@@ -1,0 +1,22 @@
+
+body {
+    background-color: black;
+
+}
+
+h1 {
+    color: white;
+}
+
+.card {
+    margin-top: 20px;
+}
+
+.bottomButton {
+    margin-top: 20px;
+}
+
+#elementToMove{
+    -webkit-transition: left 1s ease;
+    transition: left 1s ease;
+}

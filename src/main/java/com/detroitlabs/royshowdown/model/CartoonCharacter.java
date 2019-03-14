@@ -8,6 +8,7 @@ public class CartoonCharacter {
 
     private String name;
     private String image;
+    private String job = "";
 
     @JsonProperty("name")
     public String getName() {
@@ -27,5 +28,9 @@ public class CartoonCharacter {
     @JsonProperty("image")
     public void setImage(String image) {
         this.image = image;
+    }
+
+    public String getJob() {
+        return job;
     }
 }
