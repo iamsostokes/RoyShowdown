@@ -4,7 +4,7 @@ public class Player {
 
     private CartoonCharacter cartoonCharacter;
     private String name;
-    private Job job;
+    private Job job = new Job();
 
     public CartoonCharacter getCartoonCharacter() {
         return cartoonCharacter;

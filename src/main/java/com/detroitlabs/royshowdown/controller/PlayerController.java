@@ -31,8 +31,7 @@ public class PlayerController {
         getCurrentPlayerOne().setCartoonCharacter(character1);
         getCurrentPlayerTwo().setCartoonCharacter(character2);
 
-        modelMap.put("playerOneImage", getCurrentPlayerOne().getCartoonCharacter().getImage());
-        modelMap.put("playerTwoImage", getCurrentPlayerTwo().getCartoonCharacter().getImage());
+       setAllPlayersImageOnModelMap(modelMap);
 
         return "index";
     }
@@ -40,8 +39,8 @@ public class PlayerController {
     @RequestMapping("/jobsearch")
     public String displayJobPage(ModelMap modelMap) {
 
-        modelMap.put("playerOneImage", getCurrentPlayerOne().getCartoonCharacter().getImage());
-        modelMap.put("playerTwoImage", getCurrentPlayerTwo().getCartoonCharacter().getImage());
+        setAllPlayersImageOnModelMap(modelMap);
+        setAllPlayersNamesOnModelMap(modelMap);
 
         return "jobPage";
     }
@@ -49,8 +48,10 @@ public class PlayerController {
     @RequestMapping("/readytorumble")
     public String displayPlayerProfiles(ModelMap modelMap) {
 
-        modelMap.put("playerOneImage", getCurrentPlayerOne().getCartoonCharacter().getImage());
-        modelMap.put("playerTwoImage", getCurrentPlayerTwo().getCartoonCharacter().getImage());
+        setAllPlayersImageOnModelMap(modelMap);
+        setAllPlayersNamesOnModelMap(modelMap);
+        setAllPlayersJobNamesOnModelmap(modelMap);
+
 
         return "preShowdown";
     }
@@ -58,11 +59,9 @@ public class PlayerController {
     @RequestMapping("/winnercircle")
     public String displayWinnerPage(ModelMap modelMap) {
 
-        modelMap.put("playerOneImage", getCurrentPlayerOne().getCartoonCharacter().getImage());
-        modelMap.put("playerOneName", getCurrentPlayerOne().getCartoonCharacter().getName());
-
-        modelMap.put("playerTwoImage", getCurrentPlayerTwo().getCartoonCharacter().getImage());
-        modelMap.put("playerTwoName", getCurrentPlayerTwo().getCartoonCharacter().getName());
+        setAllPlayersImageOnModelMap(modelMap);
+        setAllPlayersNamesOnModelMap(modelMap);
+        setAllPlayersJobNamesOnModelmap(modelMap);
 
         return "winnerPage";
     }
@@ -83,6 +82,21 @@ public class PlayerController {
 
     private Player getCurrentPlayerTwo(){
         return currentGame.getPlayers().get(1);
+    }
+
+    private void setAllPlayersImageOnModelMap(ModelMap modelMap){
+        modelMap.put("playerOneImage", getCurrentPlayerOne().getCartoonCharacter().getImage());
+        modelMap.put("playerTwoImage", getCurrentPlayerTwo().getCartoonCharacter().getImage());
+    }
+
+    private void setAllPlayersNamesOnModelMap(ModelMap modelMap){
+        modelMap.put("playerOneName", getCurrentPlayerOne().getCartoonCharacter().getName());
+        modelMap.put("playerTwoName", getCurrentPlayerTwo().getCartoonCharacter().getName());
+    }
+
+    private void setAllPlayersJobNamesOnModelmap(ModelMap modelmap){
+        modelmap.put("playerOneJobName", getCurrentPlayerOne().getJob().getPositionTitle());
+        modelmap.put("playerTwoJobName", getCurrentPlayerTwo().getJob().getPositionTitle());
     }
 
 }
