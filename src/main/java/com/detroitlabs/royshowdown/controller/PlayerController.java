@@ -21,4 +21,18 @@ public class PlayerController {
         return "index";
     }
 
+    @RequestMapping("/jobsearch")
+    public String displayJobPage(ModelMap modelMap) {
+        CartoonCharacter character = rickAndMortyService.fetchSingleCharacter();;
+        modelMap.put("character", character);
+        return "jobPage";
+    }
+
+    @RequestMapping("/readytorumble")
+    public String displayPlayerProfiles(ModelMap modelMap) {
+        CartoonCharacter character = rickAndMortyService.fetchSingleCharacter();;
+        modelMap.put("character", character);
+        return "preShowdown";
+    }
+
 }

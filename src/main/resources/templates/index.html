@@ -8,34 +8,42 @@
 </head>
 <body>
 
+<nav class="navbar navbar-expand-sm bg-dark justify-content-center">
+    <h3 class="navbar-brand align-self-start col-sm-2" style="color: white;">ROY</h3>
+    <span class="col-sm-2"></span>
+    <h1 class="navbar-text col-sm-4">GET YOUR NAME</h1>
+    <span class="col-sm-4"></span>
+</nav>
+
 <div class="container-fluid">
 
     <div class="row card-deck justify-content-center">
 
 
-            <div class="card d-inline-flex col-sm-4">
+            <div class="card bg-transparent d-inline-flex col-sm-4">
                 <div>
-                    <p th:text="${character.name}"></p>
-                    <img th:src="${character.image}"/>
+                    <img class="card-img-top" th:src="${character.image}"/>
+                    <ul class="list-group list-group-flush bg-info">
+                        <li class="list-group-item" th:text="'Name: '">Name</li>
+                    </ul>
                 </div>
-                <button type="button" class="btn btn-secondary btn-lg btn-block getJobButton">Get Job</button>
             </div>
 
-            <div class="card d-inline-flex col-sm-4">
+            <div class="card bg-transparent d-inline-flex col-sm-4">
                 <div>
-                    <p th:text="${character.name}"></p>
-                    <img th:src="${character.image}"/>
+                    <img class="card-img-top" th:src="${character.image}"/>
+                    <ul class="list-group list-group-flush bg-transparent ">
+                        <li class="list-group-item" th:text="'Name: '">Name</li>
+                    </ul>
                 </div>
-                <button type="button" class="btn btn-secondary btn-lg btn-block getJobButton">Get Job</button>
             </div>
 
     </div>
 
     <div class="row">
         <div class="col-sm-4"></div>
-             <button type="button" class="btn btn-secondary btn-lg col-sm-4">Showdown</button>
+            <a th:href="@{/jobsearch}" class="btn btn-primary btn-lg bottomButton col-sm-4">Name Up!</a>
         <div class="col-sm-4"></div>
-
     </div>
 
 </div>

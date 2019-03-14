@@ -1,19 +1,22 @@
-html {
-    background-color: black;
-}
 
 body {
     background-color: black;
+
+}
+
+h1 {
+    color: white;
 }
 
 .card {
     margin-top: 20px;
 }
 
-.getJobButton {
-    margin-top: 10px;
+.bottomButton {
+    margin-top: 20px;
 }
 
-.showdownButton {
-    margin-top: 10px;
+#elementToMove{
+    -webkit-transition: left 1s ease;
+    transition: left 1s ease;
 }
