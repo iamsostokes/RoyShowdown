@@ -42,18 +42,18 @@ public class PlayerController {
 
         setAllPlayersImageOnModelMap(modelMap);
         setAllPlayersNamesOnModelMap(modelMap);
-
+//        setAllPlayersJobNamesOnModelmap(modelMap);
         return "jobPage";
     }
 
     @RequestMapping("/readytorumble")
     public String displayPlayerProfiles(ModelMap modelMap) {
-        JobSearchRepository searchRepo = jobService.fetchAllJobs();
-        Job playerJob1 = searchRepo.getSearchResult().getSearchResultItems().get(0);
-        Job playerJob2 = searchRepo.getSearchResult().getSearchResultItems().get(10);
-
-        getCurrentPlayerOne().setJob(playerJob1);
-        getCurrentPlayerTwo().setJob(playerJob2);
+//        JobSearchRepository searchRepo = jobService.fetchAllJobs();
+//        Job playerJob1 = searchRepo.getSearchResult().getSearchResultItems().get(0);
+//        Job playerJob2 = searchRepo.getSearchResult().getSearchResultItems().get(10);
+//
+//        getCurrentPlayerOne().setJob(playerJob1);
+//        getCurrentPlayerTwo().setJob(playerJob2);
 
         JobSearchRepository jobSearchRepository = jobService.fetchAllJobs();
 //        jobSearchRepository.getSearchResult().fetchSingleJob();
@@ -78,9 +78,8 @@ public class PlayerController {
         setAllPlayersImageOnModelMap(modelMap);
         setAllPlayersNamesOnModelMap(modelMap);
         setAllPlayersJobNamesOnModelmap(modelMap);
-
         setAllPlayerSalariesOnModelMap(modelMap);
-
+        modelMap.put("winner", determineWinner());
 
         return "winnerPage";
     }
@@ -143,6 +142,18 @@ public class PlayerController {
     public String getPlayerTwoJobTitle() {
         return getCurrentPlayerTwo().getJob().getMatchedObjectDescriptor().getPositionTitle();
 
+    }
+
+    public String determineWinner(){
+        double playerOneSalaryToDouble = Double.parseDouble(getPlayerOneMaximumSalary());
+        double playerTwoSalaryToDouble = Double.parseDouble(getPlayerTwoMaximumSalary());
+        if (playerOneSalaryToDouble > playerTwoSalaryToDouble){
+            return "playerOneWins";
+        } else if (playerTwoSalaryToDouble > playerOneSalaryToDouble) {
+            return "playerTwoWins";
+        } else {
+            return "tie";
+        }
     }
 
 }

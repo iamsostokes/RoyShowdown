@@ -8,7 +8,7 @@ import java.util.ArrayList;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class Job {
-    private String PositionTitle = "default job position";
+   // private String PositionTitle = "default job position";
     private ArrayList<SalaryRange> PositionRemuneration = new ArrayList<SalaryRange>();
 
     private JobInfo MatchedObjectDescriptor;
@@ -24,8 +24,8 @@ public class Job {
         MatchedObjectDescriptor = matchedObjectDescriptor;
     }
 
-    public String getPositionTitle() {
-        return PositionTitle;
-    }
+//    public String getPositionTitle() {
+//        return PositionTitle;
+//    }
 
 }

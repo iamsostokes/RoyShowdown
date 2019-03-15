@@ -6,14 +6,16 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" th:href="@{main.css}" type="text/css">
 </head>
-<body>
+<body th:switch="${winner}">
 
-<div class="container-fluid">
+<!--Player One Wins-->
+
+<div th:case="'playerOneWins'" class="container-fluid">
 
     <nav class="navbar navbar-expand-sm bg-dark justify-content-center">
         <h3 class="navbar-brand align-self-start col-sm-2" style="color: white;">ROY</h3>
         <span class="col-sm-2"></span>
-        <h1 class="navbar-text col-sm-4">Player ??? is the winner!</h1>
+        <h1 class="navbar-text col-sm-4">Player One is the winner!</h1>
         <span class="col-sm-4"></span>
     </nav>
 
@@ -51,6 +53,100 @@
 
 
 </div>
+
+<!--//Player Two wins-->
+
+<div th:case="'playerTwoWins'" class="container-fluid">
+
+    <nav class="navbar navbar-expand-sm bg-dark justify-content-center">
+        <h3 class="navbar-brand align-self-start col-sm-2" style="color: white;">ROY</h3>
+        <span class="col-sm-2"></span>
+        <h1 class="navbar-text col-sm-4">Player Two is the winner!</h1>
+        <span class="col-sm-4"></span>
+    </nav>
+
+    <div class="row card-deck justify-content-center">
+
+        <div class="card d-inline-flex col-sm-4">
+            <div>
+                <img class="card-img-top" th:src="${playerTwoImage}"/>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item" th:text="'Name: ' + ${playerTwoName}">Name</li>
+                    <li class="list-group-item" th:text="'Job: ' + ${playerTwoJobName}">Job</li>
+                    <li class="list-group-item" th:text="'Salary: ' + ${playerTwoSalary}">Job</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="card d-inline-flex col-sm-2">
+            <div>
+                <img class="card-img-top" th:src="${playerOneImage}"/>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item" th:text="'Name: ' + ${playerOneName}">Name</li>
+                    <li class="list-group-item" th:text="'Job: ' + ${playerOneJobName}">Job</li>
+                    <li class="list-group-item" th:text="'Salary: ' + ${playerOneSalary}">Job</li>
+                </ul>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="row">
+        <div class="col-sm-4"></div>
+        <a th:href="@{/}" class="btn btn-primary btn-lg bottomButton col-sm-4">Play again</a>
+        <div class="col-sm-4"></div>
+    </div>
+
+
+</div>
+
+<!--//Tie Scenario-->
+
+<div th:case="'tie'" class="container-fluid">
+
+    <nav class="navbar navbar-expand-sm bg-dark justify-content-center">
+        <h3 class="navbar-brand align-self-start col-sm-2" style="color: white;">ROY</h3>
+        <span class="col-sm-2"></span>
+        <h1 class="navbar-text col-sm-4">It's a Tie!</h1>
+        <span class="col-sm-4"></span>
+    </nav>
+
+    <div class="row card-deck justify-content-center">
+
+        <div class="card d-inline-flex col-sm-4">
+            <div>
+                <img class="card-img-top" th:src="${playerOneImage}"/>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item" th:text="'Name: ' + ${playerOneName}">Name</li>
+                    <li class="list-group-item" th:text="'Job: ' + ${playerOneJobName}">Job</li>
+                    <li class="list-group-item" th:text="'Salary: ' + ${playerOneSalary}">Job</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="card d-inline-flex col-sm-4">
+            <div>
+                <img class="card-img-top" th:src="${playerTwoImage}"/>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item" th:text="'Name: ' + ${playerTwoName}">Name</li>
+                    <li class="list-group-item" th:text="'Job: ' + ${playerTwoJobName}">Job</li>
+                    <li class="list-group-item" th:text="'Salary: ' + ${playerTwoSalary}">Job</li>
+                </ul>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="row">
+        <div class="col-sm-4"></div>
+        <a th:href="@{/}" class="btn btn-primary btn-lg bottomButton col-sm-4">Play again</a>
+        <div class="col-sm-4"></div>
+    </div>
+
+
+</div>
+
+
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>

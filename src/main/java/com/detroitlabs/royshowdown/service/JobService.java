@@ -18,6 +18,6 @@ public class JobService {
         headers.add("User-Agent", "omar.atcho@detroitlabs.com");
         headers.add("Authorization-Key", "I21bQVc1pzre1Wo2STmhcF7TGpb7pCXVl+RXeADLzKE=");
         return restTemplate.getForObject("https://data.usajobs.gov/api/Archive?PostingStartDate=" +
-                "2019-03-07&PostingEndDate=2020-01-01", JobSearchRepository.class);
+                "2019-01-07&PostingEndDate=2020-01-01", JobSearchRepository.class);
     }
 }
