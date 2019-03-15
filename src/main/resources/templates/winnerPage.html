@@ -8,7 +8,7 @@
 </head>
 <body th:switch="${winner}">
 
-//Player One Wins
+<!--Player One Wins-->
 
 <div th:case="'playerOneWins'" class="container-fluid">
 
@@ -54,7 +54,7 @@
 
 </div>
 
-//Player Two wins
+<!--//Player Two wins-->
 
 <div th:case="'playerTwoWins'" class="container-fluid">
 
@@ -100,9 +100,9 @@
 
 </div>
 
-//Tie Scenario
+<!--//Tie Scenario-->
 
-<div class="container-fluid">
+<div th:case="'tie'" class="container-fluid">
 
     <nav class="navbar navbar-expand-sm bg-dark justify-content-center">
         <h3 class="navbar-brand align-self-start col-sm-2" style="color: white;">ROY</h3>

@@ -8,7 +8,7 @@ import java.util.ArrayList;
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class JobInfo {
 
-    private String PositionTitle;
+    private String PositionTitle = "";
     private ArrayList<SalaryRange> PositionRemuneration = new ArrayList<SalaryRange>();
 
     @JsonProperty("PositionTitle")
