@@ -8,8 +8,13 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
+import sun.nio.cs.US_ASCII;
 
+import javax.swing.text.NumberFormatter;
+import java.text.DecimalFormat;
+import java.text.NumberFormat;
 import java.util.ArrayList;
+import java.util.Locale;
 
 @Controller
 public class PlayerController {
@@ -78,6 +83,9 @@ public class PlayerController {
         setAllPlayersImageOnModelMap(modelMap);
         setAllPlayersNamesOnModelMap(modelMap);
         setAllPlayersJobNamesOnModelmap(modelMap);
+
+
+
         setAllPlayerSalariesOnModelMap(modelMap);
         modelMap.put("winner", determineWinner());
 
