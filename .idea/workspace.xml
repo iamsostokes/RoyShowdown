@@ -2,19 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="605f83e7-5e32-4b15-83a7-2233e5e4c9db" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/detroitlabs/royshowdown/controller/PlayerControllerTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/4.10/fileContent/fileContent.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.10/fileContent/fileContent.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/4.10/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.10/fileHashes/fileHashes.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/4.10/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.10/fileHashes/fileHashes.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/4.10/javaCompile/javaCompile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.10/javaCompile/javaCompile.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/4.10/javaCompile/taskHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.10/javaCompile/taskHistory.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/4.10/taskHistory/taskHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.10/taskHistory/taskHistory.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/4.10/taskHistory/taskHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.10/taskHistory/taskHistory.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/AppConfiguration.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/detroitlabs/royshowdown/controller/PlayerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/detroitlabs/royshowdown/controller/PlayerController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/detroitlabs/royshowdown/model/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/detroitlabs/royshowdown/model/Game.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/detroitlabs/royshowdown/controller/PlayerControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/detroitlabs/royshowdown/controller/PlayerControllerTest.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/.gradle/" />
@@ -73,8 +61,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/test/java/com/detroitlabs/royshowdown/controller/PlayerControllerTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="780">
-              <caret line="52" column="35" selection-start-line="52" selection-start-column="35" selection-end-line="52" selection-end-column="35" />
+            <state relative-caret-position="475">
+              <caret line="91" column="39" selection-start-line="91" selection-start-column="39" selection-end-line="91" selection-end-column="39" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -219,7 +207,7 @@
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="35" />
+    <option name="x" value="441" />
     <option name="y" value="49" />
     <option name="width" value="1164" />
     <option name="height" value="796" />
@@ -354,7 +342,7 @@
     <property name="RequestMappingsPanelWidth1" value="75" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1552673356992" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1552675096376" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit4" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.Arquillian JUnit4" value="" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit4" value="" />
@@ -392,7 +380,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.PlayerControllerTest.determineWinner">
+  <component name="RunManager" selected="JUnit.PlayerControllerTest.shouldTestThatResultIsATie">
     <configuration name="RoyShowdown [bootRun]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -428,6 +416,38 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="PlayerControllerTest.shouldTestThatPlayerOneWins" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="com.detroitlabs.royshowdown.test" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.detroitlabs.royshowdown.controller.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.detroitlabs.royshowdown.controller" />
+      <option name="MAIN_CLASS_NAME" value="com.detroitlabs.royshowdown.controller.PlayerControllerTest" />
+      <option name="METHOD_NAME" value="shouldTestThatPlayerOneWins" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="PlayerControllerTest.shouldTestThatResultIsATie" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="com.detroitlabs.royshowdown.test" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.detroitlabs.royshowdown.controller.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.detroitlabs.royshowdown.controller" />
+      <option name="MAIN_CLASS_NAME" value="com.detroitlabs.royshowdown.controller.PlayerControllerTest" />
+      <option name="METHOD_NAME" value="shouldTestThatResultIsATie" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="AppConfiguration" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
       <module name="com.detroitlabs.royshowdown.main" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.detroitlabs.royshowdown.AppConfiguration" />
@@ -437,8 +457,10 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.PlayerControllerTest.determineWinner" />
+        <item itemvalue="JUnit.PlayerControllerTest.shouldTestThatResultIsATie" />
+        <item itemvalue="JUnit.PlayerControllerTest.shouldTestThatPlayerOneWins" />
         <item itemvalue="Gradle.RoyShowdown [bootRun]" />
+        <item itemvalue="JUnit.PlayerControllerTest.determineWinner" />
         <item itemvalue="Spring Boot.AppConfiguration" />
       </list>
     </recent_temporary>
@@ -480,25 +502,34 @@
     <history-entry file="PlayerControllerTest_determineWinner - 2019.03.15 at 14h 04m 27s.xml">
       <configuration name="PlayerControllerTest.determineWinner" configurationId="JUnit" />
     </history-entry>
+    <history-entry file="PlayerControllerTest_determineWinner - 2019.03.15 at 14h 09m 19s.xml">
+      <configuration name="PlayerControllerTest.determineWinner" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="PlayerControllerTest_determineWinner - 2019.03.15 at 14h 29m 03s.xml">
+      <configuration name="PlayerControllerTest.determineWinner" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="PlayerControllerTest_determineWinner - 2019.03.15 at 14h 29m 20s.xml">
+      <configuration name="PlayerControllerTest.determineWinner" configurationId="JUnit" />
+    </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="40690000" />
+    <option name="totallyTimeSpent" value="42256000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="35" y="49" width="1164" height="796" extended-state="0" />
+    <frame x="441" y="49" width="1164" height="796" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.7058824" visible="true" weight="0.2691622" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.703504" visible="true" weight="0.2691622" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="UI Designer" order="3" />
-      <window_info id="Favorites" order="4" sideWeight="0.29462737" side_tool="true" weight="0.2691622" />
+      <window_info id="Favorites" order="4" sideWeight="0.29649594" side_tool="true" weight="0.2691622" />
       <window_info id="Capture Tool" order="5" />
       <window_info id="Web" order="6" sideWeight="0.4113372" side_tool="true" weight="0.21244635" />
       <window_info id="Image Layers" order="7" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32876712" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.17897727" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.47301137" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -695,13 +726,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/detroitlabs/royshowdown/model/SalaryRange.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/detroitlabs/royshowdown/model/Game.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="120">
@@ -733,10 +757,17 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/detroitlabs/royshowdown/model/SalaryRange.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/com/detroitlabs/royshowdown/controller/PlayerControllerTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="780">
-          <caret line="52" column="35" selection-start-line="52" selection-start-column="35" selection-end-line="52" selection-end-column="35" />
+        <state relative-caret-position="475">
+          <caret line="91" column="39" selection-start-line="91" selection-start-column="39" selection-end-line="91" selection-end-column="39" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
