@@ -27,7 +27,7 @@
                 <ul class="list-group list-group-flush">
                     <li class="list-group-item" th:text="'Name: ' + ${playerOneName}">Name</li>
                     <li class="list-group-item" th:text="'Job: ' + ${playerOneJobName}">Job</li>
-                    <li class="list-group-item" th:text="'Salary: ' + ${playerOneSalary}">Job</li>
+                    <li class="list-group-item" th:text="'Salary: ' + ${#numbers.formatCurrency(playerOneSalary)}">Job</li>
                 </ul>
             </div>
         </div>
@@ -38,7 +38,7 @@
                 <ul class="list-group list-group-flush">
                     <li class="list-group-item" th:text="'Name: ' + ${playerTwoName}">Name</li>
                     <li class="list-group-item" th:text="'Job: ' + ${playerTwoJobName}">Job</li>
-                    <li class="list-group-item" th:text="'Salary: ' + ${playerTwoSalary}">Job</li>
+                    <li class="list-group-item" th:text="'Salary: ' + ${#numbers.formatCurrency(playerTwoSalary)}">Job</li>
                 </ul>
             </div>
         </div>
@@ -73,7 +73,7 @@
                 <ul class="list-group list-group-flush">
                     <li class="list-group-item" th:text="'Name: ' + ${playerTwoName}">Name</li>
                     <li class="list-group-item" th:text="'Job: ' + ${playerTwoJobName}">Job</li>
-                    <li class="list-group-item" th:text="'Salary: ' + ${playerTwoSalary}">Job</li>
+                    <li class="list-group-item" th:text="'Salary: ' + ${#numbers.formatCurrency(playerTwoSalary)}">Job</li>
                 </ul>
             </div>
         </div>
@@ -84,7 +84,7 @@
                 <ul class="list-group list-group-flush">
                     <li class="list-group-item" th:text="'Name: ' + ${playerOneName}">Name</li>
                     <li class="list-group-item" th:text="'Job: ' + ${playerOneJobName}">Job</li>
-                    <li class="list-group-item" th:text="'Salary: ' + ${playerOneSalary}">Job</li>
+                    <li class="list-group-item" th:text="'Salary: ' + ${#numbers.formatCurrency(playerOneSalary)}">Job</li>
                 </ul>
             </div>
         </div>
@@ -119,7 +119,7 @@
                 <ul class="list-group list-group-flush">
                     <li class="list-group-item" th:text="'Name: ' + ${playerOneName}">Name</li>
                     <li class="list-group-item" th:text="'Job: ' + ${playerOneJobName}">Job</li>
-                    <li class="list-group-item" th:text="'Salary: ' + ${playerOneSalary}">Job</li>
+                    <li class="list-group-item" th:text="'Salary: ' + ${#numbers.formatCurrency(playerOneSalary)}">Job</li>
                 </ul>
             </div>
         </div>
@@ -130,7 +130,7 @@
                 <ul class="list-group list-group-flush">
                     <li class="list-group-item" th:text="'Name: ' + ${playerTwoName}">Name</li>
                     <li class="list-group-item" th:text="'Job: ' + ${playerTwoJobName}">Job</li>
-                    <li class="list-group-item" th:text="'Salary: ' + ${playerTwoSalary}">Job</li>
+                    <li class="list-group-item" th:text="'Salary: ' + ${#numbers.formatCurrency(playerTwoSalary)}">Job</li>
                 </ul>
             </div>
         </div>
