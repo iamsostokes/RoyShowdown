@@ -32,7 +32,7 @@ public class PlayerController {
         getCurrentPlayerOne().setCartoonCharacter(character1);
         getCurrentPlayerTwo().setCartoonCharacter(character2);
 
-       setAllPlayersImageOnModelMap(modelMap);
+        setAllPlayersImageOnModelMap(modelMap);
 
         return "index";
     }
@@ -93,35 +93,35 @@ public class PlayerController {
         modelMap.put("positionTitle", searchRepo.getSearchResult().getSearchResultItems().get(0).getMatchedObjectDescriptor().getPositionTitle());
         modelMap.put("searchResultCount", searchRepo.getSearchResult().getSearchResultCount());
         modelMap.put("jobResults", positionTitle);
-        modelMap.put("languageCode",searchRepo.getLanguageCode());
+        modelMap.put("languageCode", searchRepo.getLanguageCode());
         return "testTemplate";
     }
 
-    private Player getCurrentPlayerOne(){
+    private Player getCurrentPlayerOne() {
         return currentGame.getPlayers().get(0);
     }
 
-    private Player getCurrentPlayerTwo(){
+    private Player getCurrentPlayerTwo() {
         return currentGame.getPlayers().get(1);
     }
 
-    private void setAllPlayersImageOnModelMap(ModelMap modelMap){
+    private void setAllPlayersImageOnModelMap(ModelMap modelMap) {
         modelMap.put("playerOneImage", getCurrentPlayerOne().getCartoonCharacter().getImage());
         modelMap.put("playerTwoImage", getCurrentPlayerTwo().getCartoonCharacter().getImage());
     }
 
-    private void setAllPlayersNamesOnModelMap(ModelMap modelMap){
+    private void setAllPlayersNamesOnModelMap(ModelMap modelMap) {
         modelMap.put("playerOneName", getCurrentPlayerOne().getCartoonCharacter().getName());
         modelMap.put("playerTwoName", getCurrentPlayerTwo().getCartoonCharacter().getName());
     }
 
-    private void setAllPlayersJobNamesOnModelmap(ModelMap modelmap){
+    private void setAllPlayersJobNamesOnModelmap(ModelMap modelmap) {
 
         modelmap.put("playerOneJobName", getCurrentPlayerOne().getJob().getMatchedObjectDescriptor().getPositionTitle());
         modelmap.put("playerTwoJobName", getCurrentPlayerTwo().getJob().getMatchedObjectDescriptor().getPositionTitle());
     }
 
-    private void setAllPlayerSalariesOnModelMap(ModelMap modelMap){
+    private void setAllPlayerSalariesOnModelMap(ModelMap modelMap) {
         modelMap.put("playerOneSalary", getCurrentPlayerOne().getJob().getMatchedObjectDescriptor().getPositionRemuneration().get(0).getMaximumRange());
         modelMap.put("playerTwoSalary", getCurrentPlayerTwo().getJob().getMatchedObjectDescriptor().getPositionRemuneration().get(0).getMaximumRange());
     }
@@ -130,24 +130,26 @@ public class PlayerController {
         SalaryRange playerOneSalaryRange = getCurrentPlayerOne().getJob().getMatchedObjectDescriptor().getPositionRemuneration().get(0);
         return playerOneSalaryRange.getMaximumRange();
     }
+
     public String getPlayerTwoMaximumSalary() {
         SalaryRange playerTwoSalaryRange = getCurrentPlayerTwo().getJob().getMatchedObjectDescriptor().getPositionRemuneration().get(0);
         return playerTwoSalaryRange.getMaximumRange();
     }
 
     public String getPlayerOneJobTitle() {
-         return getCurrentPlayerOne().getJob().getMatchedObjectDescriptor().getPositionTitle();
+        return getCurrentPlayerOne().getJob().getMatchedObjectDescriptor().getPositionTitle();
 
     }
+
     public String getPlayerTwoJobTitle() {
         return getCurrentPlayerTwo().getJob().getMatchedObjectDescriptor().getPositionTitle();
 
     }
 
-    public String determineWinner(){
+    public String determineWinner() {
         double playerOneSalaryToDouble = Double.parseDouble(getPlayerOneMaximumSalary());
         double playerTwoSalaryToDouble = Double.parseDouble(getPlayerTwoMaximumSalary());
-        if (playerOneSalaryToDouble > playerTwoSalaryToDouble){
+        if (playerOneSalaryToDouble > playerTwoSalaryToDouble) {
             return "playerOneWins";
         } else if (playerTwoSalaryToDouble > playerOneSalaryToDouble) {
             return "playerTwoWins";
@@ -156,4 +158,7 @@ public class PlayerController {
         }
     }
 
+    public void setCurrentGame(Game currentGame) {
+        this.currentGame = currentGame;
+    }
 }
